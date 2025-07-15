@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBFamous - Free Stock Photos & PDFs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo-container">
+                    <img src="public/Logo.png" alt="bbfamous" class="logo-image">
+                    <h1 class="logo-text">bbfamous</h1>
+                </div>
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#photos" class="nav-link">Photos</a>
+                    <a href="#pdfs" class="nav-link">PDFs</a>
+                    <a href="admin.html" class="nav-link admin-link">Admin</a>
+                </div>
+            </div>
+            
+            <!-- Hero Section -->
+            <div class="hero">
+                <h2 class="hero-title">bbfamous Your Find your photo and pdf Download</h2>
+                <p class="hero-subtitle">Download high-quality images and documents for free. No signup required.</p>
+                
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search for photos, PDFs..." class="search-input">
+                    <button onclick="searchItems()" class="search-btn">Search</button>
+                </div>
+                
+                <!-- Filter Tabs -->
+                <div class="filter-tabs">
+                    <button onclick="filterItems('all')" class="filter-tab active" data-filter="all">All</button>
+                    <button onclick="filterItems('photo')" class="filter-tab" data-filter="photo">Photos</button>
+                    <button onclick="filterItems('pdf')" class="filter-tab" data-filter="pdf">PDFs</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Results Count -->
+            <div class="results-info">
+                <span id="resultsCount">Loading items...</span>
+            </div>
+            
+            <!-- Items Grid -->
+            <div class="items-grid" id="itemsGrid">
+                <!-- Items will be loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Preview Modal -->
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePreview()">&times;</span>
+            <div class="modal-body">
+                <div class="preview-image-container">
+                    <img id="previewImage" src="" alt="Preview">
+                    <div id="pdfPreview" class="pdf-preview">
+                        <div class="pdf-icon">📄</div>
+                        <p>PDF Document</p>
+                    </div>
+                </div>
+                <div class="preview-info">
+                    <h3 id="previewTitle"></h3>
+                    <p id="previewDescription"></p>
+                    <div class="preview-meta">
+                        <span id="previewType"></span>
+                        <span id="previewSize"></span>
+                    </div>
+                    <button onclick="downloadItem()" class="download-btn">
+                        Download Free
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 bbfamous. All rights reserved. Free stock photos and PDFs for everyone.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
